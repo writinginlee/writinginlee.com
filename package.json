@@ -1,0 +1,41 @@
+{
+  "name": "writinginlee.com",
+  "version": "1.0.0",
+  "description": "Welcome to my personal website!",
+  "main": "index.js",
+  "author": "writinginlee <95411978+writinginlee@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md,mdx}\""
+  },
+  "dependencies": {
+    "gatsby": "^4.3.0",
+    "gatsby-plugin-feed": "^4.3.0",
+    "gatsby-plugin-image": "^2.3.0",
+    "gatsby-plugin-manifest": "^4.3.0",
+    "gatsby-plugin-offline": "^5.3.0",
+    "gatsby-plugin-react-helmet": "^5.3.0",
+    "gatsby-plugin-sharp": "^4.3.0",
+    "gatsby-remark-autolink-headers": "^5.3.0",
+    "gatsby-remark-copy-linked-files": "^5.3.0",
+    "gatsby-remark-images": "^6.3.0",
+    "gatsby-remark-prismjs": "^6.3.0",
+    "gatsby-remark-responsive-iframe": "^5.3.0",
+    "gatsby-remark-smartypants": "^5.3.0",
+    "gatsby-source-filesystem": "^4.3.0",
+    "gatsby-transformer-remark": "^5.3.0",
+    "gatsby-transformer-sharp": "^4.3.0",
+    "prismjs": "^1.25.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "prettier": "2.5.0"
+  }
+}

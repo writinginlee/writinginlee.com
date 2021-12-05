@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Build environment variables
+.env.*
+
+# Gatsby
+.cache
+public
+
+# Mac
+.DS_Store
+
+# VS Code
+.vscode
+
+# Yarn
+yarn-error.log
