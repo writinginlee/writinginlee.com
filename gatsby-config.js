@@ -92,6 +92,7 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-robots-txt",
     // Images
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
