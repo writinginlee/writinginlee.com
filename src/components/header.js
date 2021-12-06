@@ -75,7 +75,7 @@ export const Header = () => {
                 <li>
                   {" "}
                   <Link
-                    to={`/categories/${category}`}
+                    to={`/categories/${category.toLowerCase()}`}
                     key={category}
                     className={styles.subLink}
                   >
