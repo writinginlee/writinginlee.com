@@ -1,15 +1,16 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 import { Layout } from "../components/layout";
 import { Seo } from "../components/seo";
 
+import * as styles from "./blog-post.module.css";
+
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const description = post.frontmatter.description || post.excerpt;
-  const title = post.frontmatter.title;
+  const { tags, title, date } = post.frontmatter;
   const html = post.html;
-  const date = post.frontmatter.date;
   const authorsList = post.frontmatter.authors;
   const authors = authorsList.join(" ");
 
@@ -17,9 +18,20 @@ const BlogPostTemplate = ({ data }) => {
     <Layout>
       <Seo title={title} description={description} />
       <article>
-        <header>
+        <header className={styles.header}>
           <h1>{title}</h1>
-          {date} {` | ${authors}`}
+          {tags && (
+            <div className={styles.tags}>
+              {tags.map((tag) => (
+                <Link key={tag} to={`/tags/${tag}`} className={styles.link}>
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          )}
+          <span className={styles.postDetails}>
+            {date} {` | ${authors}`}{" "}
+          </span>
         </header>
         <section
           dangerouslySetInnerHTML={{
