@@ -1,0 +1,150 @@
+main {
+  margin-top: 60px;
+  min-height: calc(100vh - 184px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 2rem 0 2rem;
+  max-width: 800px;
+}
+p,
+ol,
+ul,
+table,
+blockquote {
+  color: var(--font-color);
+  font-size: 1.05rem;
+  margin: 0 0 1.5rem;
+}
+ul li ul {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--heading-font-family);
+  color: var(--heading-font-color);
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+table {
+  display: block;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+}
+thead,
+tbody {
+  white-space: nowrap;
+}
+th {
+  border-bottom: 2px solid var(--border-color);
+}
+tfoot th {
+  border-top: 1px solid var(--border-color);
+}
+td {
+  border-bottom: 1px solid var(--border-color);
+}
+tr:last-child td {
+  border-bottom: 0;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.75rem !important;
+  hyphens: auto;
+  word-break: break-word;
+}
+tbody tr:nth-child(odd) {
+  background-color: var(--dark-opacity);
+}
+article {
+  margin-bottom: 3rem;
+}
+article header {
+  text-align: center;
+}
+article h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--bright-font-color);
+}
+article h2,
+article h3,
+article h4,
+article h5 {
+  margin: 0 0 0.75rem 0;
+}
+article a {
+  color: var(--font-color);
+}
+article a:hover {
+  color: var(--bright-font-color);
+}
+article li a,
+article li a:hover {
+  border-top: none;
+  border-bottom: none;
+}
+article img {
+  display: block;
+  max-width: 100%;
+}
+article h2 {
+  font-size: 2rem;
+  padding-bottom: 0.25rem;
+  filter: var(--h2-filter);
+}
+article h2 code {
+  font-size: 2rem !important;
+}
+article h3 {
+  font-size: 1.6rem;
+  filter: var(--h3-filter);
+}
+article h3 code {
+  font-size: 1.6rem !important;
+}
+article h4 {
+  font-size: 1.1rem;
+  padding-bottom: 0.25rem;
+  filter: var(--h4-filter);
+  text-transform: uppercase;
+}
+article h4 code {
+  font-size: 1.25rem !important;
+}
+article h5 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+blockquote {
+  padding: 1rem;
+  border: 2px solid var(--primary);
+  background: var(--blockquote-background-color);
+}
+blockquote p {
+  color: var(--blockquote-color);
+}
+blockquote ul {
+  margin-top: 1rem;
+}
+blockquote p:last-of-type,
+blockquote ul:last-of-type {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 800px) {
+  table {
+    display: table;
+  }
+  thead,
+  tbody {
+    white-space: normal;
+  }
+}
