@@ -1,11 +1,143 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--toolbar-background-color);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 9;
+}
+.nav {
+  display: none;
+}
+.hamburger {
+  margin: 24px 24px;
+  width: 24px;
+  height: 3px;
+  background: var(--font-color) none repeat scroll 0% 0%;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s linear;
+}
+.hamburger::before {
+  content: "";
+  box-sizing: border-box;
+  display: block;
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  position: absolute;
+  transform-origin: 50% 50% 0px;
+  transition: all 0.3s linear;
+  background: var(--font-color) none repeat scroll 0% 0%;
+  top: -8px;
+}
+.hamburger::after {
+  content: "";
+  box-sizing: border-box;
+  display: block;
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  position: absolute;
+  transform-origin: 50% 50% 0px;
+  transition: all 0.3s linear;
+  background: var(--font-color) none repeat scroll 0% 0%;
+  top: 8px;
+}
+.menuOpen .hamburger {
+  background-color: transparent;
+}
+.menuOpen .hamburger::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+.menuOpen .hamburger::after {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+.navOpen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: var(--font-color);
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transition: border 200ms ease;
+}
+.link:hover {
+  background: var(--dark-opacity-hover);
+}
+.link:focus {
+  outline: none;
+  background: var(--dark-opacity-hover);
+}
+.link:active {
+  outline: none;
+  background: var(--dark-opacity-hover);
+}
+.button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: var(--font-color);
+  font-size: 1.05rem;
+  padding: 1rem;
+}
+.button:hover {
+  background: var(--dark-opacity-hover);
+}
+.submenu {
+  display: none;
+}
+.submenuOpen {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+}
+.submenuOpen > li {
+  list-style: none;
+}
+.subLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: var(--font-color);
+  background: var(--toolbar-background-color);
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transition: border 200ms ease;
+}
+.subLink:hover {
+  background: var(--reverse);
+}
+.subLink:focus {
+  outline: none;
+  background: var(--reverse);
+}
+.subLink:active {
+  outline: none;
+  background: var(--reverse);
+}
 @media screen and (min-width: 458px) {
-  .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--toolbar-background-color);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    z-index: 9;
+  .hamburger,
+  .menu,
+  .navOpen {
+    display: none;
   }
   .nav {
     display: flex;
@@ -14,74 +146,17 @@
   }
   .flex {
     display: flex;
+    flex-direction: row;
   }
-  .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    color: var(--font-color);
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    transition: border 200ms ease;
-  }
-  .link:hover {
-    background: var(--dark-opacity-hover);
-  }
-  .link:focus {
-    outline: none;
-    background: var(--dark-opacity-hover);
-  }
-  .link:active {
-    outline: none;
-    background: var(--dark-opacity-hover);
+  .container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .button {
-    cursor: pointer;
-    border: none;
-    outline: none;
     position: relative;
-    color: var(--font-color);
-    font-size: 1.05rem;
-    padding: 1rem;
-  }
-  .button:hover {
-    background: var(--dark-opacity-hover);
-  }
-  .submenu {
-    display: none;
   }
   .submenuOpen {
-    display: flex;
-    flex-direction: column;
     position: absolute;
-    left: 0;
-    right: 0;
-    margin-top: 1rem;
-  }
-  .submenuOpen > li {
-    list-style: none;
-  }
-  .subLink {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    color: var(--font-color);
-    background: var(--toolbar-background-color);
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    transition: border 200ms ease;
-  }
-  .subLink:hover {
-    background: var(--reverse);
-  }
-  .subLink:focus {
-    outline: none;
-    background: var(--reverse);
-  }
-  .subLink:active {
-    outline: none;
-    background: var(--reverse);
   }
 }
