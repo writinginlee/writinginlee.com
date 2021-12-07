@@ -1,0 +1,5 @@
+.year {
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
+  padding-bottom: 1rem;
+}
