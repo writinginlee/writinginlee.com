@@ -81,22 +81,17 @@ export const Header = () => {
             <Link to={"/blog"} key={"/blog"} className={styles.link}>
               Blog
             </Link>
-            <button
-              className={styles.button}
-              onClick={onToggleHeader}
-              onBlur={onToggleHeader}
-            >
+            <button className={styles.button} onClick={onToggleHeader}>
               <span>Categories ▾</span>
-
               <ul
                 className={dropdownOpen ? styles.submenuOpen : styles.submenu}
               >
                 {categories.map((category) => (
-                  <li key={category}>
+                  <li key={category.toLowerCase()}>
                     {" "}
                     <Link
                       to={`/categories/${category.toLowerCase()}`}
-                      key={category}
+                      key={category.toLowerCase()}
                       className={styles.subLink}
                     >
                       {category}
