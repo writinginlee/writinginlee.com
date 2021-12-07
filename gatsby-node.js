@@ -97,6 +97,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMarkdownRemark.nodes;
+  const tagSet = new Set();
+  const categorySet = new Set();
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -107,6 +109,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id;
       const nextPostId =
         index === posts.length - 1 ? null : posts[index + 1].id;
+
+      if (post.frontmatter.tags) {
+        post.frontmatter.tags.forEach((tag) => {
+          tagSet.add(tag);
+        });
+      }
+
+      if (post.frontmatter.category) {
+        categorySet.add(post.frontmatter.category);
+      }
 
       createPage({
         path: post.fields.slug,
@@ -119,4 +131,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       });
     });
   }
+
+  tagSet.forEach((tag) => {
+    createPage({
+      path: `/tags/${tag}`,
+      component: path.resolve("./src/templates/tag.js"),
+      context: {
+        tag,
+      },
+    });
+  });
+
+  categorySet.forEach((category) => {
+    createPage({
+      path: `/categories/${category.toLowerCase()}`,
+      component: path.resolve("./src/templates/category.js"),
+      context: {
+        category,
+      },
+    });
+  });
 };
