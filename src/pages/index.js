@@ -1,15 +1,43 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React, { useMemo } from "react";
+import { graphql, Link } from "gatsby";
 
 import { Layout } from "../components/layout";
+import { Posts } from "../components/posts";
 import { Seo } from "../components/seo";
+
+import { getSimplifiedPosts } from "../utils/blog-post-helpers";
+
+import * as styles from "./index.module.css";
 
 const Index = ({ data }) => {
   const title = data.site.siteMetadata.title;
+  const latest = data.latest.nodes;
+  const simplifiedLatest = useMemo(() => getSimplifiedPosts(latest), [latest]);
 
   return (
     <Layout>
       <Seo title={title} />
+      <article>
+        <header>
+          <h1 className={styles.h1}>@writinginlee</h1>
+          <p className={styles.p}>
+            I enjoy writing and learning new things. I wanted a place where I
+            could write and keep a collection of the things I wrote about.
+          </p>
+          <p className={styles.p}>
+            By creating this site I hope to share and express my thoughts in a
+            more tangible matter not only for myself but others as well.
+          </p>
+        </header>
+        <section>
+          <h2 className={styles.h2}>
+            <span>Latest Articles</span> <Link to="/blog">View All</Link>
+          </h2>
+          <div>
+            <Posts data={simplifiedLatest} />
+          </div>
+        </section>
+      </article>
     </Layout>
   );
 };
