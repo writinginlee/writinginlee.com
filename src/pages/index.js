@@ -56,6 +56,7 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
+        id
         excerpt
         fields {
           slug

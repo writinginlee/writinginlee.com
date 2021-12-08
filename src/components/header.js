@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
 import * as styles from "./header.module.css";
@@ -58,6 +58,18 @@ export const Header = () => {
     }
     setDropdownOpen(false);
   };
+
+  useEffect(() => {
+    const listener = () => {
+      setMenuOpen(false);
+      setDropdownOpen(false);
+    };
+    window.addEventListener("orientationchange", listener);
+
+    return () => {
+      window.removeEventListener("orientationchange", listener);
+    };
+  }, [setMenuOpen]);
 
   return (
     <header className={styles.header}>

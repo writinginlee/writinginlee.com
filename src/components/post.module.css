@@ -26,7 +26,7 @@
   color: var(--bright-font-color);
 }
 .link:hover time {
-  color: var(--dark-font-color);
+  color: var(--bright-font-color);
 }
 .link time {
   display: block;
@@ -34,5 +34,5 @@
   font-family: var(--code-font-family);
   font-size: 0.8rem;
   font-weight: 400;
-  color: var(--dark-font-color);
+  color: var(--font-color);
 }
