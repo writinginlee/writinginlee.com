@@ -34,6 +34,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         title: String
         description: String
         date: Date @dateformat
+        updated_date: Date @dateformat
         category: String
         tags: [String]
         authors: [String]

@@ -9,7 +9,7 @@ import * as styles from "./blog-post.module.css";
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
   const description = post.frontmatter.description || post.excerpt;
-  const { tags, title, date } = post.frontmatter;
+  const { tags, title, date, updated_date } = post.frontmatter;
   const html = post.html;
   const authorsList = post.frontmatter.authors;
   const authors = authorsList.join(" ");
@@ -30,7 +30,8 @@ const BlogPostTemplate = ({ data }) => {
             </div>
           )}
           <span className={styles.postDetails}>
-            {date} {` | ${authors}`}{" "}
+            {date} {` | ${authors}`} <br />
+            {updated_date ? `Updated on: ${updated_date}` : ""}
           </span>
         </header>
         <section
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        updated_date(formatString: "MMMM DD, YYYY")
         description
         authors
         tags
