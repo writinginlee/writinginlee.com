@@ -118,8 +118,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id: post.id,
           },
         });
-        console.log("return here")
-        console.log(post)
         return;
       }
 
