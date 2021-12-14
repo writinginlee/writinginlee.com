@@ -12,7 +12,10 @@ export const Header = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
       query Category {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: { frontmatter: { template: { eq: "post" } } }
+        ) {
           nodes {
             id
             fields {

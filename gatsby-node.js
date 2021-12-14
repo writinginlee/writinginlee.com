@@ -38,6 +38,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         category: String
         tags: [String]
         authors: [String]
+        template: String
       }
   
       type Fields {
@@ -63,8 +64,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  // Define a template for blog post
+  // Define templates
   const blogPost = path.resolve("./src/templates/blog-post.js");
+  const about = path.resolve("./src/templates/about.js");
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -79,6 +81,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             frontmatter {
               category
               tags
+              template
             }
             fields {
               slug
@@ -107,6 +110,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
+      if (post.frontmatter.template === "about") {
+        createPage({
+          path: post.fields.slug,
+          component: about,
+          context: {
+            id: post.id,
+          },
+        });
+        console.log("return here")
+        console.log(post)
+        return;
+      }
+
       const previousPostId = index === 0 ? null : posts[index - 1].id;
       const nextPostId =
         index === posts.length - 1 ? null : posts[index + 1].id;

@@ -43,7 +43,9 @@ export const pageQuery = graphql`
   query CategoryQuery($category: String) {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: {
+        frontmatter: { template: { eq: "post" }, category: { eq: $category } }
+      }
     ) {
       totalCount
       nodes {

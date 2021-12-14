@@ -34,7 +34,10 @@ export default Blog;
 
 export const pageQuery = graphql`
   query BlogQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { template: { eq: "post" } } }
+    ) {
       nodes {
         id
         fields {
