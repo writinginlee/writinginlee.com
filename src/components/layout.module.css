@@ -27,6 +27,7 @@ h5 {
   color: var(--heading-font-color);
   line-height: 1.2;
   margin: 0 0 1rem 0;
+  scroll-margin-top: 5rem;
 }
 table {
   display: block;
