@@ -140,8 +140,8 @@ blockquote p:last-of-type,
 blockquote ul:last-of-type {
   margin-bottom: 0;
 }
-ul,
-ol {
+article ul,
+article ol {
   padding-left: 2rem;
 }
 @media screen and (min-width: 800px) {
