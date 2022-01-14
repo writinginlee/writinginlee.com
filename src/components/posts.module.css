@@ -3,3 +3,6 @@
   color: var(--primary);
   padding-bottom: 1rem;
 }
+section {
+ margin-bottom: 2rem;
+}
