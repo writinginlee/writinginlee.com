@@ -10,7 +10,8 @@
   background: var(--dark-opacity);
   border: 1px solid var(--light-border-color);
 }
-.linkNew, .linkNew:hover {
+.linkNew,
+.linkNew:hover {
   margin: 0.5rem 0;
   border-left: 3px solid var(--primary);
 }
