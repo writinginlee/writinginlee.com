@@ -20,14 +20,8 @@ const Index = ({ data }) => {
       <article>
         <header>
           <h1 className={styles.h1}>@writinginlee</h1>
-          <p className={styles.p}>
-            I enjoy writing and learning new things. I wanted a place where I
-            could write and keep a collection of the things I wrote about.
-          </p>
-          <p className={styles.p}>
-            By creating this site I hope to share and express my thoughts in a
-            more tangible matter not only for myself but others as well.
-          </p>
+          <p className={styles.p}>Under construction!</p>
+          <p className={styles.p}>For a special someone...</p>
         </header>
         <section>
           <h2 className={styles.h2}>
